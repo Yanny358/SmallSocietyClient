@@ -14,6 +14,8 @@
     "axios": "^0.27.2",
     "fomantic-ui": "^2.8.8",
     "fomantic-ui-css": "^2.8.8",
+    "mobx": "^6.6.1",
+    "mobx-react-lite": "^3.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "4.0.3",
