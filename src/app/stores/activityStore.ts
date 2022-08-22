@@ -81,7 +81,7 @@ export default class ActivityStore {
         this.loading = true;
         try {
             await agent.Activities.create(activity);
-            runInAction(() =>{
+            runInAction(() => {
                 this.activityRegistry.set(activity.id, activity);
                 this.selectedActivity = activity;
                 this.editMode = false;
