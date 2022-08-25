@@ -14,7 +14,7 @@ export default observer(function ActivityDashboard() {
       if(activityRegistry.size <= 1) loadActivities();
     }, [activityRegistry.size, loadActivities])
   
-    if (activityStore.loadingInitial) return ( <h2 className='text-center'>Loading...</h2>);
+    if (activityStore.loadingInitial) return ( <h2 className='text-center'>Loading activities...</h2>);
 
     return (
         <Grid>
