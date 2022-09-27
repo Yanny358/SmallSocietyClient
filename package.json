@@ -43,6 +43,7 @@
     "postinstall": "semantic-ui-css-patch",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "mv build /Users/yannybrown/RiderProjects/SmallSociety/API/wwwroot",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
