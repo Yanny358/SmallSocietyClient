@@ -8,7 +8,6 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import HomePage from '../../features/home/homePage';
 import ActivityForm from '../../features/activities/form/ActivityForm';
 import ActivityDetails from '../../features/activities/details/ActivityDetails';
-import TestErrors from '../../features/errors/TestError';
 import { ToastContainer } from 'react-toastify';
 import NotFound from '../../features/errors/NotFound';
 import ServerErrors from '../../features/errors/ServerErrors';
@@ -16,6 +15,7 @@ import { useStore } from '../stores/store';
 import ModalContainer from '../common/modals/ModalContainer';
 import ProfilePage from '../../features/profiles/ProfilePage';
 import PrivateRoute from './PrivateRoute';
+import AllProfiles from '../../features/profiles/AllProfiles';
 
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
                 <PrivateRoute path='/activities/:id' component={ActivityDetails} />
                 <PrivateRoute key={location.key} path={['/createActivity', '/manage/:id']} component={ActivityForm} />
                 <PrivateRoute path='/profiles/:username' component={ProfilePage} />
-                <PrivateRoute path='/errors' component={TestErrors} /> 
+                <PrivateRoute path='/profiles' component={AllProfiles} /> 
                 <Route path='/server-error' component={ServerErrors} />
                 <Route component={NotFound} />
               </Switch>

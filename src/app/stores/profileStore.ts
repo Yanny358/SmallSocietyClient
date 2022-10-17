@@ -9,6 +9,7 @@ export default class ProfileStore {
     uploading = false;
     loading = false;
     followings: Profile[] = [];
+    users: Profile[] = [];
     loadingFollowings = false;
     activeTab = 0;
     userActivities: UserActivity[] = [];
@@ -47,6 +48,20 @@ export default class ProfileStore {
             const profile = await agent.Profiles.get(username);
             runInAction(() => {
                 this.profile = profile;
+                this.loadingProfile = false;
+            })
+        } catch (error) {
+            console.log(error);
+            runInAction(() => this.loadingProfile = false);
+        }
+    }
+
+    loadUsers = async () => {
+        this.loadingProfile = true;
+        try {
+            const users = await agent.Profiles.getAll();
+            runInAction(() => {
+                this.users = users;
                 this.loadingProfile = false;
             })
         } catch (error) {
